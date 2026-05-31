@@ -1,0 +1,910 @@
+<!DOCTYPE HTML>
+<html>
+		<head>
+		<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+			
+			<title>TO DO LIST</title>
+		</head>
+	<body id="root">
+		
+		<div class="hedder">
+			<h1 id="zyz">To Do List</h1>
+			<div class="acrba">
+			  <button id="me" onclick="seti()"> <span class="material-symbols-outlined">settings </span> </button>
+			  <button id=ame onclick="folderPanelPlay()"><span class="material-symbols-outlined">folder</span></button>
+			</div>
+		</div>
+		
+		<div class="s">
+			<p id="sa">powered by <br/>KEVS WORLD</p>
+		</div>
+		
+		<div class="list">
+		</div>
+		
+		<div class="a">
+				<button id="ad" onclick="adding()">
+					<span class="material-symbols-outlined">
+						Add 
+					</span>
+				</button>
+			</div>
+
+        <div class="checker">
+            <span class="material-symbols-outlined">warning</span> 
+            <p><b>YOU ARE GOING TO CLEAR ALL THE DATA FROM THIS BROWSER.</b></p>
+            <p>Are you sure you want to do this?</p>
+            <button onclick="ella()">Cancel</button>
+            <button id="adada" onclick="tiche()">Clear</button>
+        </div>
+		
+	
+	</body>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+		body {
+			background-color: #b5e3e0;
+		}
+		.hedder{
+			border-bottom-width:2px;
+			border-color: #003e6d;
+			margin: 0px; 
+			text-align: center; 
+			border-bottom-style: solid;
+			font-family: "dancing script"
+		}
+		#me {
+			background-color: transparent;
+			display: flex;
+			border-style: none;
+			color: rgb(0, 0, 0);
+			margin-left: auto;
+			margin-bottom: 10px;
+		}
+		
+			#ame {
+  			background-color: transparent;
+  	  	display: flex;
+  			border-style: none;
+  			color: rgb(0, 0, 0);
+  			position: absolute;
+  			right: 10px;
+  			top: 10px;
+		}
+		
+		#sa {
+			text-align: right;
+			margin-bottom: 10px;
+			color: #707F70;
+		}
+		.s{
+			position: absolute;
+			bottom: 0;
+			right: 3px;
+		}
+		#ad {
+			border-style: none;
+			color: rgb(255, 255, 255) ;
+			border-radius: 50%;
+			width: 50px;
+			height: 50px;
+			padding: 10px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #003e6d
+		}
+		.a {
+			position: absolute;
+			bottom: 5px;
+			left: 5px;
+		}
+		.abc {
+			display: flex; 
+			grid-template-columns:40px auto 40px 25px;
+			padding: 10px;
+		}
+		.abc input {
+			flex: 1;
+			height: 20px;
+			width: 20px;
+		}
+		.abc p {
+			flex: 2;
+			font-size: 20px;
+			font-family: comic sans ms;
+			margin: 0px;
+		}
+	   #deli {
+			flex: 4;
+			background-color: transparent;
+			color: #000000;
+			border-style: none;
+			position: absolute;
+			right: 4px;
+		}
+		#descama  {
+			flex: 3;
+			position: absolute;
+			right: 20px;
+			margin-right: 20px;
+            background-color: transparent;
+            border-style: none;
+            color: #000000;
+		}
+		.all {
+			background-color: #ffeaea;
+			display: flex;
+			border-radius: 20px;
+			left: 10px;
+			right: 10px;
+			bottom: 10px;
+			height: 100px;
+			padding: 10px;
+			justify-items: center;
+		}
+		.all button {
+			position: absolute;
+			right: 1px;
+			bottom: 2px;
+		}
+		.all p {
+			overflow-wrap: break-word;
+			word-break: break-all;
+		}
+		.adc {
+			position: fixed;
+			border-radius: 20px;
+			left: 10px;
+			right: 10px;
+			bottom: 10px;
+			padding: 10px;
+			background-color: #ffeaea;
+		}
+		#close {
+			position: absolute;
+			right: 1px;
+			bottom: 2px;
+		}
+		#cus {
+			display: flex;
+			grid-template-columns: 40px 40px;
+		}
+		#cus input {
+			flex: 1;
+			width: 70px;
+		}
+		#cus button {
+			flex: 2;
+		}
+		.bal {
+			display: flex;
+			grid-template-columns: auto auto auto auto auto;
+			margin-right: 40px;
+		}
+		#rede {
+			flex: 1;
+			border-style: none;
+			background-color: #ffa7a7;
+			height: 40px;
+			width: 20px;
+		}
+		#yello {
+			flex: 2;
+			border-style: none;
+			background-color: #fff0a7;
+			height: 40px;
+			width: 20px;
+		}
+		#gree {
+			flex: 3;
+			border-style: none;
+			background-color: #b5e3e0;
+			height: 40px;
+			width: 20px;
+		}
+		#blu {
+			flex: 4;
+			border-style: none;
+			background-color: #a6c7ff;
+			height: 40px;
+			width: 20px;
+		}
+		#puprp {
+			flex: 5;
+			border-style: none;
+			background-color: #b893e1;
+			height: 40px;
+			width: 20px;
+		}
+
+        #yacs {
+            background-color: #ff4646;
+            border-style: none;
+            color: #ffffff;
+            margin: 15px;
+        }
+
+        .checker {
+            background-color: #c79696;
+            position: fixed;
+            top: 20px;
+            border-radius: 20px;
+            display: none;
+        }
+
+        #adada {
+            background-color: #ff4646;
+        }
+		
+		#folderse {
+            position: fixed;
+            border-radius: 20px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            padding: 10px;
+            background-color: #ffeaea;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+		
+		
+        .eachFolder {
+            background-color: #bce1fb;
+            border-style: none;
+            border-bottom-style: solid;
+            border-bottom-color: #3b594d;
+            border-bottom-width: 2px;
+            padding: 10px;
+            text-align: left;
+            font-size: 20px;
+            width: 95%;
+    }
+    
+    #newKa{
+        position: fixed;
+        background-color: #948962;
+        border-style: solid;
+        top: 20px;
+        left: 20px;
+        padding: 10px;
+    }
+
+    #cclosablLLLLL{
+        color: #000000;
+        background-color: transparent;
+        border-style: none;
+    }
+
+	</style>
+	<script>
+		
+        let folderMap={}
+
+		let toDoAddName = 'toA'
+		let ooo = null
+		let allFolder = []
+       
+       
+        let appData = {
+            background: '#b5e3e0',
+            folders:[]
+        }
+        
+        
+        let currentFolder = document.querySelector('.list')
+		currentFolder.folderName ='To Do';
+		let currentFolderButton = null;
+		currentFolder.style.display='block'
+
+        
+        
+        function saveData(){
+            localStorage.setItem(
+                'todoApp',
+                JSON.stringify(appData)
+            );
+        }
+
+        function ella() {
+            document.querySelector('.checker').style.display = 'none';
+        }
+
+        function tiche() {
+        localStorage.clear();
+        alert('Data in this browser is cleared.');
+        document.querySelector('.checker').style.display = 'none';
+        }
+        
+        function closeAll(){
+            for (let i = 0; i < allFolder.length; i++){
+                allFolder[i].style.display='none'
+            }
+        }
+
+        function createFolder(folderName){
+
+            let folderDiv = document.createElement("div");
+
+            folderDiv.folderName = folderName;
+            folderDiv.className = "list";
+            folderDiv.style.display = "none";
+
+            document.body.appendChild(folderDiv);
+
+            allFolder.push(folderDiv);
+
+            folderMap[folderName] = folderDiv;
+
+            return folderDiv;
+        }
+		
+        function folderPanelPlay(){
+
+            if (ooo === null){
+
+                ooo = document.createElement("div");
+                document.body.appendChild(ooo);
+                ooo.id = "folderse";
+
+                let toDo = document.createElement("button");
+                ooo.appendChild(toDo);
+                toDo.className = "eachFolder";
+                toDo.innerHTML = '<span class="material-symbols-outlined" style="color:#aa00ff;">folder</span> To Do';
+
+                let mainList = document.querySelector('.list');
+                allFolder.push(mainList);
+				currentFolder = mainList;
+                toDo.onclick = function () {
+                    closeAll();
+                    mainList.style.display = "block";
+                    currentFolder = mainList;
+					currentFolderButton = toDo;
+					document.getElementById('zyz').innerHTML=currentFolder.folderName;
+                };
+
+                appData.folders.forEach(function(folder){
+
+                    if(folder.name !== "To Do"){
+
+                        let folderDiv = folderMap[folder.name];
+
+                        let folderButton = document.createElement("button");
+                        folderButton.className = "eachFolder";
+
+                        folderButton.innerHTML =
+                        `<span class="material-symbols-outlined" style="color:#aa00ff;">folder</span> ${folder.name}`;
+
+                        ooo.appendChild(folderButton);
+
+                        folderButton.onclick = function(){
+
+                            closeAll();
+
+                            folderDiv.style.display = "block";
+
+                            currentFolder = folderDiv;
+
+                            currentFolderButton = folderButton;
+
+                            document.getElementById('zyz').innerHTML =
+                                folderDiv.folderName;
+                        };
+                    }
+
+                });
+
+                let addFolder = document.createElement("button");
+                ooo.appendChild(addFolder);
+                addFolder.className = "eachFolder";
+                addFolder.innerHTML =
+                '<span class="material-symbols-outlined" style="color:#ff0000;">add</span> Create Folder';
+
+                addFolder.onclick = function () {
+
+                    let newKaName = document.createElement("div");
+                    document.body.appendChild(newKaName);
+                    newKaName.id = "newKa";
+
+                    let folderNam = document.createElement("input");
+                    newKaName.appendChild(folderNam);
+                    folderNam.placeholder = "Enter Folder Name";
+
+                    let cancele = document.createElement("button");
+                    newKaName.appendChild(cancele);
+                    cancele.innerHTML = "Cancel";
+
+                    cancele.onclick = function () {
+                        newKaName.remove();
+                    };
+
+                    let okeya = document.createElement("button");
+                    newKaName.appendChild(okeya);
+                    okeya.innerHTML = "Create Folder";
+
+                    okeya.onclick = function () {
+
+                        let namo = folderNam.value.trim();
+
+                        if (namo === "") {
+                            folderNam.style.borderColor = "red";
+                            return;
+                        }
+
+                        let folderDiv = document.createElement("div");
+						
+                        folderDiv.folderName=namo;
+                        appData.folders.push({
+                            name: namo,
+                            tasks: []
+                        });
+                        saveData();
+						
+                        folderDiv.className='list'
+                        folderDiv.style.display = "none";
+                        document.body.appendChild(folderDiv);
+
+                        allFolder.push(folderDiv);
+
+                        let folderButton = document.createElement("button");
+                        folderButton.className = "eachFolder";
+                        folderButton.innerHTML =
+                        `<span class="material-symbols-outlined" style="color:#aa00ff;">folder</span> ${namo}`;
+
+                        ooo.insertBefore(folderButton, addFolder);
+
+                        folderButton.onclick = function () {
+                            closeAll();
+                            folderDiv.style.display = "block";
+                            currentFolder = folderDiv;
+							currentFolderButton = folderButton;
+							document.getElementById('zyz').innerHTML=folderDiv.folderName;
+                        };
+
+                        newKaName.remove();
+                    };
+                };
+
+                let into = document.createElement("button");
+                ooo.appendChild(into);
+
+                into.innerHTML = '<span class="material-symbols-outlined">tab_close</span>';
+
+                into.style.backgroundColor = "transparent";
+                into.style.borderStyle = "none";
+                into.style.position = "absolute";
+                into.style.right = "5px";
+                into.style.top = "5px";
+
+                into.onclick = function () {
+                    ooo.style.display = "none";
+                };
+
+            } else {
+
+                ooo.style.display = "block";
+
+            }
+        }
+		
+		////////////////////////////////////////////////////////////////////////////
+        
+        function adding(){
+			
+			let a = document.createElement("div");
+			document.body.appendChild(a);
+			
+			let nami = document.createElement("input");
+			a.appendChild(nami);
+			nami.style.backgroundColor = "transparent";
+			nami.placeholder="Enter to do";
+			nami.style.borderStyle= "none";
+			nami.style.fontSize="20px";
+			
+			let des = document.createElement("input");
+			a.appendChild(des);
+			des.style.backgroundColor = "transparent";
+			des.placeholder="Enter discripton"
+			des.style.borderStyle= "none";
+			des.style.fontSize="20px";
+			let ok = document.createElement("button");
+			a.appendChild(ok)
+			ok.innerHTML = '<span class="material-symbols-outlined"> add_task </span>';
+			ok.style.backgroundColor= 'transparent';
+			ok.style.borderStyle= "none";
+			ok.onclick= disply;
+			function disply() {
+				
+				let nam = nami.value;
+				let disc = des.value;
+				
+				if (nam === '') {
+					nami.placeholder="Enter to do name";
+					nami.style.borderStyle='solid'
+					nami.style.borderColor='red';
+				}else  {
+					nam = nami.value.trim();
+					disc = des.value;
+					
+					let area = currentFolder;
+					
+					let work = document.createElement('div');
+					area.appendChild(work);
+					work.style.borderBottomStyle='solid';
+					work.style.borderBottomWidth="1.5px";
+					work.style.borderBottomColor='#707F70';
+					work.className='abc'
+					
+                    let check = document.createElement('input');
+					check.type='checkbox';
+
+                    check.onchange = function(){
+                        saveData();
+                    }
+
+					work.appendChild(check);
+					let task = document.createElement('p');
+					work.appendChild(task);
+					task.innerHTML=nam;
+
+                    let folderData = appData.folders.find(
+                        f => f.name === currentFolder.folderName
+                    );
+                    if(folderData){
+                        folderData.tasks.push({
+                            title: nam,
+                            description: disc,
+                            checked: false
+                        });
+
+                        saveData();
+                    }
+					
+					let b = document.createElement('button');
+					work.appendChild(b);
+					b.innerHTML='<span class="material-symbols-outlined"> description </span';
+					b.id='descama'
+					b.style.backgroundColor='transparent';
+					b.style.borderStyle='none'
+					b.style.color='black'
+					b.style.display='grid'
+					b.style.justifyContent='right'
+					b.onclick= function desceee() {
+						
+						let descr = document.createElement('div');
+						document.body.appendChild(descr);
+						descr.style.position='fixed';
+						descr.className='all'
+						let tex = document.createElement('p');
+						descr.appendChild(tex);
+						
+						if (disc === '') {
+							tex.innerHTML='No Discripton Added..';
+						} else {
+							tex.innerHTML='discripton: '+disc;
+						}
+						
+						let into = document.createElement('button');
+						descr.appendChild(into);
+						into.innerHTML='<span class="material-symbols-outlined">tab_close</span';
+						into.style.backgroundColor='transparent';
+						into.style.borderStyle='none'
+						into.style.color='black'
+						into.onclick= function clo() {
+							descr.remove()
+						}
+					}
+					
+					let o = document.createElement('button'); 
+					work.appendChild(o);
+					o.innerHTML='<span class="material-symbols-outlined">delete_forever</span';
+					o.id='deli'
+					o.onclick = function () {
+
+                        let folderData = appData.folders.find(
+                            f => f.name === currentFolder.folderName
+                        );
+
+                        if(folderData){
+                            folderData.tasks =
+                                folderData.tasks.filter(
+                                    t => t.title !== nam
+                                );
+
+                            saveData();
+                        }
+
+                        work.remove();
+                    }
+					a.remove();
+				} 
+			}
+		}
+
+		/////////////////////////////////////////////////////////////////////
+
+		function seti() {
+			let se = document.createElement('div'); //settings
+			document.body.appendChild(se);
+			se.className='adc';
+			let title = document.createElement('h3');
+			title.innerHTML = '<span class="material-symbols-outlined">settings</span> Settings';
+			se.appendChild(title);
+			// costome title/
+			
+				let def = document.createElement('div');
+				se.appendChild(def)
+				def.id='cus'
+				
+				let il = document.createElement('input');
+				def.appendChild(il)
+				il.placeholder='Enter Customized Title'
+				
+				let okey = document.createElement('button');
+				se.appendChild(okey)
+				okey.innerHTML='<span class="material-symbols-outlined">Published_With_Changes</span';
+				okey.style.backgroundColor='transparent';
+				okey.style.borderStyle='none'
+				okey.style.color='black'
+				okey.onclick= function chang() {
+					let nw_n = il.value
+					if (nw_n === '') {
+						il.style.borderColor='red';
+					}else  {
+						let nwn = nw_n.trim()
+						document.getElementById('zyz').innerHTML=nwn;
+
+						if (currentFolderButton){
+							currentFolderButton.innerHTML= `<span class="material-symbols-outlined" style="color:#aa00ff;">folder</span> ${nwn}`
+						}
+
+						let oldName = currentFolder.folderName;
+
+                        currentFolder.folderName = nwn;
+
+                        let folderData = appData.folders.find(
+                            f => f.name === oldName
+                        );
+
+                        if(folderData){
+                            folderData.name = nwn;
+                            saveData();
+                        }
+
+						if (currentFolderButton && currentFolderButton!==document.querySelector('.eachFolder')){
+							currentFolderButton.innerHTML= `<span class="material-symbols-outlined" style="color:#aa00ff;">folder</span> ${nwn}`
+						}
+					}
+				}
+			// costome title //
+
+			// background /	
+				let accc = document.createElement('p');
+				se.appendChild(accc);
+				accc.innerHTML='background settings'
+				let caps = document.createElement('div');
+				se.appendChild(caps)
+				caps.className='bal'
+				let rede = document.createElement('button');
+				caps.appendChild(rede)
+				rede.id='rede'
+				rede.onclick= function reding() {
+					document.body.style.backgroundColor='#ffa7a7';
+					alert('[KEVS WORLD>>TO.DO.LIST>>SETTINGS]-"Background changed to Red"')
+
+                    appData.background='#ffa7a7'
+                    saveData()
+				}
+				let yello = document.createElement('button');
+				caps.appendChild(yello)
+				yello.id='yello'
+				yello.onclick= function yellowing() {
+					document.body.style.backgroundColor='#fff0a7';
+					alert('[KEVS WORLD>>TO.DO.LIST>>SETTINGS]-"Background changed to Yellow"')
+
+                    appData.background='#fff0a7'
+                    saveData()
+				}
+				let gree = document.createElement('button');
+				caps.appendChild(gree)
+				gree.id='gree'
+				gree.onclick= function greening() {
+					document.body.style.backgroundColor='#b5e3e0';
+					alert('[KEVS WORLD>>TO.DO.LIST>>SETTINGS]-"Background changed to Green"')
+
+                    appData.background='#b5e3e0'
+                    saveData()
+				}
+				let blu = document.createElement('button');
+				caps.appendChild(blu)
+				blu.id='blu'
+				blu.onclick= function bluyng() {
+					document.body.style.backgroundColor='#a6c7ff';
+					alert('[KEVS WORLD>>TO.DO.LIST>>SETTINGS]-"Background changed to Blue"')
+
+                    appData.background='#a6c7ff'
+                    saveData()
+				}
+				let purp = document.createElement('button');
+				caps.appendChild(purp)
+				purp.id='puprp'
+				purp.onclick= function purpling() {
+					document.body.style.backgroundColor='#b893e1';
+					alert('[KEVS WORLD>>TO.DO.LIST>>SETTINGS]-"Background changed to Purple"')
+
+                    appData.background='#b893e1'
+                    saveData()
+				}
+			// background // 
+
+            //local clear /
+
+                let clear_all = document.createElement('div');
+                se.appendChild(clear_all);
+                
+                let clear_things = document.createElement('button');
+                se.appendChild(clear_things);
+                clear_things.innerHTML='<span class="material-symbols-outlined">account_circle_off</span> Clear Data'
+                clear_things.id='yacs'
+                clear_things.onclick= function abcasaasa () {
+                    let aaa = document.getElementsByClassName('checker')[0];
+                    aaa.style.display='block'
+                }
+
+            //local clear//
+
+
+			let close = document.createElement('button');
+			se.appendChild(close);
+			close.innerHTML='<span class="material-symbols-outlined">tab_close</span';
+			close.style.backgroundColor='transparent';
+			close.style.borderStyle='none'
+			close.style.color='black'
+			close.onclick= function clo() {
+				se.remove()
+			}
+			close.id='close'
+		}
+
+        window.onload = function(){
+
+            let saved = localStorage.getItem("todoApp");
+            alert(saved)
+
+            if(saved){
+
+                appData = JSON.parse(saved);
+                console.log(appData)
+
+                document.body.style.backgroundColor =
+                    appData.background;
+                
+                    appData.folders.forEach(function(folder){
+
+                let folderDiv;
+
+                if(folder.name === "To Do"){
+
+                    folderDiv = document.querySelector('.list');
+                    folderDiv.folderName = "To Do";
+                    folderMap['To Do'] = folderDiv;
+
+                }else{
+
+                    folderDiv = createFolder(folder.name);
+
+                }
+
+                folder.tasks.forEach(function(task){
+
+                    let work = document.createElement('div');
+
+                    work.style.borderBottomStyle = 'solid';
+                    work.style.borderBottomWidth = "1.5px";
+                    work.style.borderBottomColor = '#707F70';
+                    work.className = 'abc';
+
+                    let check = document.createElement('input');
+                    check.type = 'checkbox';
+                    check.checked = task.checked;
+
+                    check.onchange = function(){
+                        task.checked = check.checked;
+                        saveData();
+                    };
+
+                    work.appendChild(check);
+
+                    let taskText = document.createElement('p');
+                    taskText.innerHTML = task.title;
+
+                    work.appendChild(taskText);
+
+                    let b = document.createElement('button');
+                   
+                    b.innerHTML =
+                    '<span class="material-symbols-outlined">description</span>';
+                    b.id = 'descama';
+
+                    
+                    b.onclick = function(){
+
+                        let descr = document.createElement('div');
+
+                        document.body.appendChild(descr);
+
+                        descr.className = 'all';
+                        descr.style.position = 'fixed';
+
+                        let tex = document.createElement('p');
+
+                        descr.appendChild(tex);
+
+                        if(task.description === ''){
+
+                            tex.innerHTML = 'No Description Added';
+
+                        }else{
+
+                            tex.innerHTML = 'Description: ' + task.description;
+
+                        }
+
+                        let close = document.createElement('button');
+
+                        descr.appendChild(close);
+                        
+                        close.id='cclosablLLLLL'
+
+                        close.innerHTML =
+                        '<span class="material-symbols-outlined">tab_close</span>';
+
+                        close.onclick = function(){
+
+                            descr.remove();
+
+                        };
+
+                    };
+
+                    work.appendChild(b);
+
+                    let del = document.createElement('button');
+                    del.innerHTML =
+                    '<span class="material-symbols-outlined">delete_forever</span>';
+                    del.id = 'deli';
+
+                    del.onclick = function(){
+
+                        folder.tasks = folder.tasks.filter(
+                            t => t !== task
+                        );
+
+                        saveData();
+
+                        work.remove();
+
+                    };
+
+                    work.appendChild(del);
+
+                    folderDiv.appendChild(work);
+
+                });
+
+            });
+
+                            
+
+            }
+
+        }
+
+	   
+	</script>
+</html>
